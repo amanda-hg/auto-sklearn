@@ -1,2 +1,3 @@
 ./automl-autosklearn
 ./notebooks/.ipynb_checkpoints/*
+./logs
