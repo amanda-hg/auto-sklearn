@@ -5,8 +5,8 @@ structure that the config file needs to follow. The schema is specific to tha pr
 
 import json
 import itertools
-import cerberus
 from json.decoder import JSONDecodeError
+import cerberus
 from cerberus.validator import Validator
 from get_logger import logger
 Validator.types_mapping["integer"] = cerberus.TypeDefinition("integer", (int,), (bool,))
@@ -14,10 +14,9 @@ Validator.types_mapping["integer"] = cerberus.TypeDefinition("integer", (int,), 
 def get_schema():
     """Get the schema of the ceberus's schema of the config file.
     """
-    return { 'nCores' : {'type' : 'integer', 'default' : 20, 'min' : 1, 'max' : 64},
+    return { 'model_type' : {'type' : 'string', 'default' : 'regression'},
              'train' : {'type' : 'boolean', 'default' : True},
              'predict' : {'type' : 'boolean', 'default' : False},
-             'sentimentalAnalyze' : {'type' : 'boolean', 'default' : False}
            }
 
 def read_config(config_path):
@@ -63,7 +62,16 @@ def validate_config(config, schema):
         logger.error("config file has issues")
         raise Exception("config file has issues:\n{}".format(json.dumps(validation.errors, indent=1)))
 
-    #custom_validations(config)
     document = validation.document
     document.update(config)
+
+    # Model type parameter
+    if document['model_type'] == '':
+        logger.error("The model type cannot be empty.")
+        exit(1)
+    else:
+        if document['model_type'] not in ['regression', 'classification', 'multi-label']:
+            logger.error("The model type must be one of these values: regression, classification or multi-label.")
+            exit(1)
+
     return document

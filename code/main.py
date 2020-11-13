@@ -24,3 +24,11 @@ dir_output, dir_tmp, config_path = get_folder_structure(root_path=ROOT_PATH, \
 print(dir_output)
 print(dir_tmp)
 print(config_path)
+
+logger.info("Validation config file..")
+# Load config
+schema = get_schema()
+config = read_config(config_path=config_path)
+config = validate_config(config=config, schema=schema)
+
+print(config)
