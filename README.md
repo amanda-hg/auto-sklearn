@@ -20,8 +20,12 @@ The dependences needed for the auto-sklearn installation on Mac OSX:
 1) Press Command+Space and type Terminal and press enter/return key.
 2) Run in Terminal app:
     ```curl https://raw.githubusercontent.com/automl/auto-sklearn/master/requirements.txt | xargs -n 1 -L 1 pip3 install``` 
-4) Finally run:
+3) Finally run:
     ```pip3 install auto-sklearn```
+
+#### Anaconda
+A common installation problem under recent Linux distribution is the incompatibility of the compiler version used to compile the Python binary shipped by AnaConda and the compiler installed by the distribution. This can be solved by installing the gcc compiler shipped with AnaConda (as well as swig):
+``` conda install gxx_linux-64 gcc_linux-64 swig```
 
 ## 3. Introduction
 This module teach about use auto-sklearn Python library. 
