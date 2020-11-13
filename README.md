@@ -19,13 +19,9 @@ The dependences needed for the auto-sklearn installation on Mac OSX:
 
 1) Press Command+Space and type Terminal and press enter/return key.
 2) Run in Terminal app:
-    ```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null``` 
-    and press enter/return key.
-    If the screen prompts you to enter a password, please enter your Mac's user password to continue. When you type the password, it won't be displayed on screen, but the system would accept it. So just type your password and press ENTER/RETURN key. Then wait for the command to finish.
-3) Run:
-    ```brew install swig```
-4) Run:
-    ```pip install auto-skelarn``
+    ```curl https://raw.githubusercontent.com/automl/auto-sklearn/master/requirements.txt | xargs -n 1 -L 1 pip3 install``` 
+4) Finally run:
+    ```pip3 install auto-sklearn```
 
 ## 3. Introduction
 This module teach about use auto-sklearn Python library. 
