@@ -35,7 +35,7 @@ In this application we are gonna execute three different model with Auto-sklearn
 * Multi-label Classification
 
 The first step to executre this application is configurate the *global_vars.py* script. This script contain two varibles:
-*ROOT_PATH*: The root path of your project.
+*ROOT_PATH*: The root path of your project. \
 *CONFIG_NAME*: The config file name.
 
 When the user executes this application, the model executed is gonna save in the *model* folder. This model will be readed for the prediction. When the prediction has made, the application will save some statistics about our model in the *output* folder.
