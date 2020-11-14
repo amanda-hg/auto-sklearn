@@ -1,3 +1,7 @@
-/code/__pycache__/*
-/notebooks/.ipynb_checkpoints/*
-/logs/*
+config/config.json
+code/__pycache__/*
+notebooks/.ipynb_checkpoints/*
+logs/*
+output/*
+tmp/*
+.DS_Store
