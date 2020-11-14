@@ -14,17 +14,21 @@ def get_folder_structure(root_path="./", config_fname="config.json"):
         raise TypeError("root_path must be str")
     if not isinstance(config_fname, str):
         raise TypeError("config_fname must be str")
+    dir_model = os.path.join(root_path, "model/")
     dir_output = os.path.join(root_path, "output/")
     dir_tmp = os.path.join(root_path, "tmp/")
     config_path = os.path.join(root_path, "config/", config_fname)
+    dir_model = os.path.normpath(dir_model)
     dir_output = os.path.normpath(dir_output)
     dir_tmp = os.path.normpath(dir_tmp)
     config_path = os.path.normpath(config_path)
+    if not os.path.isdir(dir_model):
+        raise Exception("path of model data does not exist: {}".format(dir_model))
     if not os.path.isdir(dir_output):
         raise Exception("path of output data does not exist: {}".format(dir_output))
     if not os.path.isdir(dir_tmp):
         raise Exception("path of tmp data does not exist: {}".format(dir_tmp))
     if not os.path.isfile(config_path):
-        logger.info("there is no config file")
+        logger.info("There is no config file")
         config_path = None
-    return dir_output, dir_tmp, config_path
+    return dir_model, dir_output, dir_tmp, config_path
