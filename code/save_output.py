@@ -13,9 +13,9 @@ def save_pickle(obj_to_save, filename, path_to_save):
     pickle.dump(obj_to_save, open(fname, "wb"))
 
 def save_txt(text, filename, path_to_save):
-    ''' Method to save objects as pickle
+    ''' Method to save objects as txt
     Parameters:
-        -obj_to_save (object)
+        -text (string)
         -filename (string)
         -path_to_save (string)
     '''
