@@ -1,2 +1,2 @@
-ROOT_PATH = "/Users/amanda/Desktop/Amanda/Modelling-Projects/auto-sklearn"
+ROOT_PATH = "/Users/your/project/root/path"
 CONFIG_NAME = "config.json"
