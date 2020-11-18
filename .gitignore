@@ -1,6 +1,6 @@
 config/config.json
 code/__pycache__/*
-notebooks/.ipynb_checkpoints/*
+notebooks/*
 logs/*
 output/*
 tmp/*
